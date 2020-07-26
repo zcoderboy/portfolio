@@ -2,8 +2,6 @@ import React from 'react'
 import {Helmet} from 'react-helmet';
 import useSiteMetadata from '../hooks/use-sitemetadata';
 import { Global,css } from '@emotion/core'
-import Font from '../../static/hiragino-sans-gb-w3.otf'
-import favicon from "../../static/favicon.ico"
 const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
@@ -12,7 +10,7 @@ const Layout = ({ children }) => {
         styles={css`
           @font-face {
             font-family: hirogina;
-            src: url(${Font});
+            src: url("hiragino-sans-gb-w3.otf");
           }
           *{
             margin: 0;
@@ -29,7 +27,7 @@ const Layout = ({ children }) => {
         <html lang="fr" />
         <title>{title}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"></link>
-        <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
+        <link rel="icon" type="image/png" href={`favicon.ico`} sizes="16x16" />
         <meta name="description" content={description} />
       </Helmet>
       {children}
