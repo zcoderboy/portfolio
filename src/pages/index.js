@@ -6,6 +6,10 @@ import Header from '../components/Header'
 import Me from '../../static/zcoderboy.jpeg'
 import Frontend from "../../static/frontend.png"
 import Backend from "../../static/server.png"
+import marvel from "../../static/marvel-app.png"
+import lyna from "../../static/lyna.png"
+import ngmovies from "../../static/ng-movies.png"
+import orangesn from "../../static/orange-sn.png"
 
 const Index = () => {
   return (
@@ -89,6 +93,7 @@ const Index = () => {
           width: 75%;
           display: flex;
           justify-content: space-between;
+          margin-bottom: 50px;
           @media screen and (max-width:630px){
             flex-direction: column;
             width: 100%;
@@ -114,6 +119,7 @@ const Index = () => {
               }
               h4{
                 position: relative;
+                font-weight: bold;
               }
               h4::before{
                 content : "";
@@ -147,6 +153,7 @@ const Index = () => {
               }
               h4{
                 position: relative;
+                font-weight: bold;
               }
               h4::before{
                 content : "";
@@ -166,6 +173,97 @@ const Index = () => {
                 using <b>PHP</b> (Drupal) plus I am a huge fan of <br/>
                 the <b>Node.js</b> ecosystem</p>
             </div>
+        </div>
+        <div>
+              <span css={css`
+                font-size: 25px;
+                font-weight: bolder;
+                position: relative;
+                :after{
+                  content : "";
+                  position: absolute;
+                  left    : 0;
+                  bottom  : 0;
+                  height  : 1px;
+                  width   : 100%;  /* or 100px */
+                  border-bottom:2px solid #E8505B;
+                  border-radius: 2px;
+                  top: 28px;
+                }
+              `}>Portfolio</span>
+              <div css={css`
+                display: flex;
+                margin-top: 40px;
+                @media screen and (max-width:630px){
+                  flex-direction: column;
+                }
+                > div{
+                  max-width: 25%;
+                  flex-basis: 25%;
+                  display:flex;
+                  padding-left: 15px;
+                  padding-right:15px;
+                  flex-direction:column;
+                  @media screen and (max-width:630px){
+                    max-width: 100%;
+                    flex-basis: 100%;
+                    margin-bottom: 40px;
+                    align-items:center;
+                  }
+                }
+                > div > *:not(img){
+                  margin-left: 13px;
+                  @media screen and (max-width:630px){ 
+                    margin-left: 0px;
+                  }
+                }
+                > div > * + *{
+                  margin-top: 8px;
+                }
+                > div img{
+                  width: 100%;
+                }
+                > div span.title{
+                  font-size: 20px;
+                }
+                >div span{
+                  font-size: 14px;
+                }
+                > div a{
+                  padding: .2rem;
+                  text-decoration: none;
+                  color: #E8505B;
+                  border: 1px solid #E8505B;
+                  border-radius: 4px;
+                  width: 35%;
+                  text-align: center;
+                }
+              `}>
+                <div>
+                  <img src={marvel}/>
+                  <span className="title">Comic book library</span>
+                  <span>React, HTML, CSS, Marvel API</span>
+                  <a href="https://react-marvel.netlify.app/" target="blank">Website</a>
+                </div>
+                <div>
+                  <img src={ngmovies}/>
+                  <span className="title">Movie library</span>
+                  <span>Angular, HTML, CSS, iMDB API</span>
+                  <a href="https://my-movie-app.netlify.app/" target="blank">Website</a>
+                </div>
+                <div>
+                  <img src={lyna}/>
+                  <span className="title">E-commerce store</span>
+                  <span>React, Gatsby, HTML, CSS, Node.js</span>
+                  <a href="https://www.lyna-boutique.com" target="blank">Website</a>
+                </div>
+                <div>
+                  <img src={orangesn}/>
+                  <span className="title">Portal website</span>
+                  <span>Drupal 8, JS, HTML, CSS</span>
+                  <a href="https://www.orange.sn" target="blank">Website</a>
+                </div>
+              </div>
         </div>
       </Container>
     </Layout>
