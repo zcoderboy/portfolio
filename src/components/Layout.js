@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
             box-sizing: border-box;
             font-family: hirogina;
           }
-          body{
+          html,body{
             overflow-x: hidden;
           }
         `}
