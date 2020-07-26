@@ -3,15 +3,12 @@ import { css } from '@emotion/core'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Header from '../components/Header'
-import Me from '../../static/zcoderboy.jpeg'
-import Frontend from "../../static/frontend.png"
-import Backend from "../../static/server.png"
-import marvel from "../../static/marvel-app.png"
-import lyna from "../../static/lyna.png"
-import ngmovies from "../../static/ng-movies.png"
-import orangesn from "../../static/orange-sn.png"
+import Img from 'gatsby-image'
+import {graphql} from 'gatsby'
 
-const Index = () => {
+const Index = ({data}) => {
+  const images  = data.allFile.edges
+  console.log(images)
   return (
     <Layout>
       <Header/>
@@ -24,7 +21,9 @@ const Index = () => {
             align-items: center;
           }
         `}>
-          <img src={Me} css={css`
+        <Img
+          fluid={images[5].node.childImageSharp.fluid}
+          css={css`
             width: 180px;
             height: 180px;
             object-fit: cover;
@@ -38,7 +37,8 @@ const Index = () => {
               align-self: center;
               margin-bottom: 10px;
             }
-          `}/>
+          `}
+        />
           <div css={css`
             display: flex;
             flex-direction: column;
@@ -133,7 +133,12 @@ const Index = () => {
                 top: 25px;
               }
             `}>
-              <img src={Frontend}/>
+              <Img
+                fluid={images[6].node.childImageSharp.fluid}
+                css={css`
+                  width:50px;
+                `}
+              />
               <h4>Frontend development</h4>
               <p>I am super familiar with. frontend technologies <br/> 
                 and crafting nice looking stuffs using <br/> 
@@ -167,7 +172,12 @@ const Index = () => {
                 top: 25px;
               }
             `}>
-              <img src={Backend}/>
+              <Img
+                fluid={images[4].node.childImageSharp.fluid}
+                css={css`
+                  width:50px;
+                `}
+              />
               <h4>Backend development</h4>
               <p>I also have work experience on the back end <br/> 
                 using <b>PHP</b> (Drupal) plus I am a huge fan of <br/>
@@ -211,7 +221,7 @@ const Index = () => {
                     align-items:center;
                   }
                 }
-                > div > *:not(img){
+                > div > *:not(:first-child){
                   margin-left: 13px;
                   @media screen and (max-width:630px){ 
                     margin-left: 0px;
@@ -219,9 +229,6 @@ const Index = () => {
                 }
                 > div > * + *{
                   margin-top: 8px;
-                }
-                > div img{
-                  width: 100%;
                 }
                 > div span.title{
                   font-size: 20px;
@@ -240,25 +247,45 @@ const Index = () => {
                 }
               `}>
                 <div>
-                  <img src={marvel}/>
+                  <Img
+                    fluid={images[1].node.childImageSharp.fluid}
+                    css={css`
+                      width:100%;
+                    `}
+                  />
                   <span className="title">Comic book library</span>
                   <span>React, HTML, CSS, Marvel API</span>
                   <a href="https://react-marvel.netlify.app/" target="blank">Website</a>
                 </div>
                 <div>
-                  <img src={ngmovies}/>
+                  <Img
+                    fluid={images[2].node.childImageSharp.fluid}
+                    css={css`
+                      width:100%;
+                    `}
+                  />
                   <span className="title">Movie library</span>
                   <span>Angular, HTML, CSS, iMDB API</span>
                   <a href="https://my-movie-app.netlify.app/" target="blank">Website</a>
                 </div>
                 <div>
-                  <img src={lyna}/>
+                  <Img
+                    fluid={images[0].node.childImageSharp.fluid}
+                    css={css`
+                      width:100%;
+                    `}
+                  />
                   <span className="title">E-commerce store</span>
                   <span>React, Gatsby, HTML, CSS, Node.js</span>
                   <a href="https://www.lyna-boutique.com" target="blank">Website</a>
                 </div>
                 <div>
-                  <img src={orangesn}/>
+                  <Img
+                    fluid={images[3].node.childImageSharp.fluid}
+                    css={css`
+                      width:100%;
+                    `}
+                  />
                   <span className="title">Portal website</span>
                   <span>Drupal 8, JS, HTML, CSS</span>
                   <a href="https://www.orange.sn" target="blank">Website</a>
@@ -269,5 +296,21 @@ const Index = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+    {
+      allFile(filter: { sourceInstanceName: { eq: "images" }}, sort:{fields: name,order: ASC}) {
+        edges {
+          node {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+          }
+        }
+      }
+    }
+`
 
 export default Index
