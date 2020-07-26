@@ -8,10 +8,6 @@ const Layout = ({ children }) => {
     <div>
       <Global
         styles={css`
-          @font-face {
-            font-family: hirogina;
-            src: url("hiragino-sans-gb-w3.otf");
-          }
           *{
             margin: 0;
             padding: 0;
@@ -21,6 +17,11 @@ const Layout = ({ children }) => {
           html,body{
             overflow-x: hidden;
           }
+          @font-face {
+            font-family: hirogina;
+            src: url("hiragino-sans-gb-w3.otf");
+            font-display: swap;
+          }
         `}
       />
       <Helmet>
@@ -28,6 +29,7 @@ const Layout = ({ children }) => {
         <title>{title}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"></link>
         <link rel="icon" type="image/png" href={`favicon.ico`} sizes="16x16" />
+        <link rel="preload" href={`hiragino-sans-gb-w3.otf`} as="font" type="font/otf" crossorigin></link>
         <meta name="description" content={description} />
       </Helmet>
       {children}
