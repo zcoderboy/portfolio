@@ -4,6 +4,12 @@ import useSiteMetadata from '../hooks/use-sitemetadata';
 import { Global,css } from '@emotion/core'
 const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
+  if(typeof document !== "undefined"){
+    const link = document.createElement('link')
+    link.rel = "stylesheet"
+    link.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    document.head.appendChild(link)
+  }
   return (
     <div>
       <Global
@@ -27,7 +33,6 @@ const Layout = ({ children }) => {
       <Helmet>
         <html lang="fr" />
         <title>{title}</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"></link>
         <link rel="icon" type="image/png" href={`favicon.ico`} sizes="16x16" />
         <link rel="preload" href={`hiragino-sans-gb-w3.otf`} as="font" type="font/otf" crossorigin></link>
         <meta name="description" content={description} />

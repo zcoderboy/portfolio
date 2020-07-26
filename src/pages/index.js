@@ -8,7 +8,6 @@ import {graphql} from 'gatsby'
 
 const Index = ({data}) => {
   const images  = data.allFile.edges
-  console.log(images)
   return (
     <Layout>
       <Header/>
