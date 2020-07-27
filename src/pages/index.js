@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import Img from 'gatsby-image'
 import {graphql} from 'gatsby'
 
+
 const Index = ({data}) => {
   const images  = data.allFile.edges
   return (
@@ -46,17 +47,17 @@ const Index = ({data}) => {
             }
           `}>
             <p css={css`
-              font-size: 20px;
+              font-size: 18px;
               line-height: 1.4;
               @media screen and (max-width:630px){
                 font-size: 18px;
               }
             `}>
               <span css={css`
-                font-size: 40px;
+                font-size: 35px;
                 font-weight: bolder;
                 @media screen and (max-width:630px){
-                  font-size: 35px;
+                  font-size: 30px;
                 }
               `}>Hello,</span><br/>
               my name is Samba Ndiaye and I am a web developer from Senegal<br/>
@@ -80,10 +81,10 @@ const Index = ({data}) => {
                 margin-left: 20px;
               }
             `}>
-              <a href="https://www.linkedin.com/in/ndiaye-samba/" target="blank"><i className="fab fa-linkedin"></i></a>
-              <a href="https://twitter.com/zcoderboy" target="blank"><i className="fab fa-twitter"></i></a>
-              <a href="https://medium.com/@juniornjay" target="blank"><i className="fab fa-medium"></i></a>
-              <a href="https://github.com/zcoderboy/" target="blank"><i className="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/ndiaye-samba/" target="blank"><i className="fa fa-linkedin-square"></i></a>
+              <a href="https://twitter.com/zcoderboy" target="blank"><i className="fa fa-twitter"></i></a>
+              <a href="https://medium.com/@juniornjay" target="blank"><i className="fa fa-medium"></i></a>
+              <a href="https://github.com/zcoderboy/" target="blank"><i className="fa fa-github"></i></a>
             </div>
           </div>
         </div>
@@ -112,6 +113,7 @@ const Index = ({data}) => {
               }
               p{
                 line-height: 1.4;
+                font-size: 15px;
               }
               > * + *{
                 margin-top: 15px;
@@ -151,6 +153,7 @@ const Index = ({data}) => {
               }
               p{
                 line-height: 1.4;
+                font-size: 15px;
               }
               > * + *{
                 margin-top: 15px;
