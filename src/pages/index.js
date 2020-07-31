@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { css } from '@emotion/core'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Header from '../components/Header'
 import Img from 'gatsby-image'
 import {graphql} from 'gatsby'
-
+import Project from '../components/Project'
+import Article from '../components/Article'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Footer from '../components/Footer'
 
 const Index = ({data}) => {
+  const [isSmall,setSmall] = useState(undefined)
+  useEffect(() => {
+    setSmall(window.innerWidth <= 630)
+    console.log('effect')
+  }, [])
   const images  = data.allFile.edges
   return (
     <Layout>
@@ -49,6 +57,7 @@ const Index = ({data}) => {
             <p css={css`
               font-size: 18px;
               line-height: 1.4;
+              margin:0;
               @media screen and (max-width:630px){
                 font-size: 18px;
               }
@@ -60,7 +69,7 @@ const Index = ({data}) => {
                   font-size: 30px;
                 }
               `}>Hello,</span><br/>
-              my name is Samba Ndiaye and I am a web developer from Senegal<br/>
+              my name is <b>Samba Ndiaye</b> and I am a web developer from Senegal<br/>
               focused on creating beautiful and user-friendly websites
             </p>
             <a href="#work" css={css`
@@ -89,12 +98,13 @@ const Index = ({data}) => {
           </div>
         </div>
         <div css={css`
-          margin-top: 40px;
+          margin-top: 30px;
           width: 75%;
           display: flex;
           justify-content: space-between;
-          margin-bottom: 50px;
+          margin-bottom: 80px;
           @media screen and (max-width:630px){
+            margin-bottom: 50px;
             flex-direction: column;
             width: 100%;
             br{
@@ -104,36 +114,38 @@ const Index = ({data}) => {
               margin-top: 30px;
             }
           }
+          > div{
+            display: flex;
+            flex-direction: column;
+            img{
+              width: 50px;
+            }
+            p{
+              line-height: 1.4;
+              font-size: 15px;
+              margin: 0;
+            }
+            > * + *{
+              margin-top: 15px;
+            }
+            h4{
+              position: relative;
+              font-weight: bold;
+            }
+            h4::before{
+              content : "";
+              position: absolute;
+              left    : 0;
+              bottom  : 0;
+              height  : 1px;
+              width   : 20%;
+              border-bottom:2px solid #E8505B;
+              border-radius: 2px;
+              top: 25px;
+            }
+          }
         `}>
-            <div css={css`
-              display: flex;
-              flex-direction: column;
-              img{
-                width: 50px;
-              }
-              p{
-                line-height: 1.4;
-                font-size: 15px;
-              }
-              > * + *{
-                margin-top: 15px;
-              }
-              h4{
-                position: relative;
-                font-weight: bold;
-              }
-              h4::before{
-                content : "";
-                position: absolute;
-                left    : 0;
-                bottom  : 0;
-                height  : 1px;
-                width   : 20%;  /* or 100px */
-                border-bottom:2px solid #E8505B;
-                border-radius: 2px;
-                top: 25px;
-              }
-            `}>
+            <div>
               <Img
                 fluid={images[6].node.childImageSharp.fluid}
                 css={css`
@@ -145,35 +157,7 @@ const Index = ({data}) => {
                 and crafting nice looking stuffs using <br/> 
                 <b>HTML</b>, <b>CSS</b> and of course <b>JavaScript</b></p>
             </div>
-            <div css={css`
-              display: flex;
-              flex-direction: column;
-              img{
-                width: 50px;
-              }
-              p{
-                line-height: 1.4;
-                font-size: 15px;
-              }
-              > * + *{
-                margin-top: 15px;
-              }
-              h4{
-                position: relative;
-                font-weight: bold;
-              }
-              h4::before{
-                content : "";
-                position: absolute;
-                left    : 0;
-                bottom  : 0;
-                height  : 1px;
-                width   : 20%;  /* or 100px */
-                border-bottom:2px solid #E8505B;
-                border-radius: 2px;
-                top: 25px;
-              }
-            `}>
+            <div>
               <Img
                 fluid={images[4].node.childImageSharp.fluid}
                 css={css`
@@ -187,132 +171,151 @@ const Index = ({data}) => {
             </div>
         </div>
         <div>
-              <span css={css`
-                font-size: 25px;
-                font-weight: bolder;
-                position: relative;
-                :after{
-                  content : "";
-                  position: absolute;
-                  left    : 0;
-                  bottom  : 0;
-                  height  : 1px;
-                  width   : 100%;  /* or 100px */
-                  border-bottom:2px solid #E8505B;
-                  border-radius: 2px;
-                  top: 28px;
-                }
-              `}>Portfolio</span>
-              <div css={css`
-                display: flex;
-                margin-top: 40px;
-                @media screen and (max-width:630px){
-                  flex-direction: column;
-                }
-                > div{
-                  max-width: 25%;
-                  flex-basis: 25%;
-                  display:flex;
-                  padding-left: 15px;
-                  padding-right:15px;
-                  flex-direction:column;
-                  @media screen and (max-width:630px){
-                    max-width: 100%;
-                    flex-basis: 100%;
-                    margin-bottom: 40px;
-                    align-items:center;
-                  }
-                }
-                > div > *:not(:first-child){
-                  margin-left: 13px;
-                  @media screen and (max-width:630px){ 
-                    margin-left: 0px;
-                  }
-                }
-                > div > * + *{
-                  margin-top: 8px;
-                }
-                > div span.title{
-                  font-size: 20px;
-                }
-                >div span{
-                  font-size: 14px;
-                }
-                > div a{
-                  padding: .2rem;
-                  text-decoration: none;
-                  color: #E8505B;
-                  border: 1px solid #E8505B;
-                  border-radius: 4px;
-                  width: 35%;
-                  text-align: center;
-                }
-              `}>
-                <div>
-                  <Img
-                    fluid={images[1].node.childImageSharp.fluid}
-                    css={css`
-                      width:100%;
-                    `}
-                  />
-                  <span className="title">Comic book library</span>
-                  <span>React, HTML, CSS, Marvel API</span>
-                  <a href="https://react-marvel.netlify.app/" target="blank">Website</a>
-                </div>
-                <div>
-                  <Img
-                    fluid={images[2].node.childImageSharp.fluid}
-                    css={css`
-                      width:100%;
-                    `}
-                  />
-                  <span className="title">Movie library</span>
-                  <span>Angular, HTML, CSS, iMDB API</span>
-                  <a href="https://my-movie-app.netlify.app/" target="blank">Website</a>
-                </div>
-                <div>
-                  <Img
-                    fluid={images[0].node.childImageSharp.fluid}
-                    css={css`
-                      width:100%;
-                    `}
-                  />
-                  <span className="title">E-commerce store</span>
-                  <span>React, Gatsby, HTML, CSS, Node.js</span>
-                  <a href="https://www.lyna-boutique.com" target="blank">Website</a>
-                </div>
-                <div>
-                  <Img
-                    fluid={images[3].node.childImageSharp.fluid}
-                    css={css`
-                      width:100%;
-                    `}
-                  />
-                  <span className="title">Portal website</span>
-                  <span>Drupal 8, JS, HTML, CSS</span>
-                  <a href="https://www.orange.sn" target="blank">Website</a>
-                </div>
-              </div>
+          <span css={css`
+            font-size: 25px;
+            font-weight: bolder;
+            position: relative;
+            :after{
+              content : "";
+              position: absolute;
+              left    : 0;
+              bottom  : 0;
+              height  : 1px;
+              width   : 100%; 
+              border-bottom:2px solid #E8505B;
+              border-radius: 2px;
+              top: 28px;
+            }
+          `}>Portfolio</span>
+          <span css={css`
+            font-size: 1rem;
+            margin-top: .5rem; 
+            display: block; 
+            @media screen and (max-width:630px){
+              font-size: 14px;
+            }
+          `}>Some apps and tools I’ve built or worked on</span>
+          <div css={css`
+            display: flex;
+            margin-top: 30px;
+            margin-bottom: 80px;
+            @media screen and (max-width:630px){
+              margin-bottom: 50px;
+              flex-direction: column;
+              margin-bottom: 0px;
+            }
+          `}>
+            {
+              data.allProjectsJson.edges.map((project)=>{
+                const {name,website,techs,id,image} = {...project.node}
+                return (
+                  <Project key={id} name={name} website={website} techs={techs} image={images[image].node}/>
+                )
+              })
+            }
+          </div>
+        </div>
+        <div>
+          <span css={css`
+            font-size: 25px;
+            font-weight: bolder;
+            position: relative;
+            :after{
+              content : "";
+              position: absolute;
+              left    : 0;
+              bottom  : 0;
+              height  : 1px;
+              width   : 100%; 
+              border-bottom:2px solid #E8505B;
+              border-radius: 2px;
+              top: 28px;
+            }
+          `}>Articles</span>
+          <span css={css`
+            font-size: 1rem;
+            margin-top: .5rem; 
+            display: block; 
+            @media screen and (max-width:630px){
+              font-size: 14px;
+            }
+          `}>On my free time I also write articles on Medium</span>
+          {
+            isSmall != undefined && !isSmall &&
+            <div css={css`
+            display: flex;
+            margin-top: 30px;
+            `}>
+              {
+                data.allArticlesJson.edges.map((article)=>{
+                  const {name,link,image,description,id} = {...article.node}
+                  return(
+                    <Article key={id} name={name} link={link} image={images[image].node} description={description}/>
+                  )
+                })
+              }
+            </div>
+          }
         </div>
       </Container>
+      {
+        isSmall != undefined && isSmall &&
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={'auto'}
+        >
+          {
+            data.allArticlesJson.edges.map((article)=>{
+              const {name,link,image,description,id} = {...article.node}
+              return(
+                <SwiperSlide key={id}>
+                  <Article name={name} link={link} image={images[image].node} description={description}/>
+                </SwiperSlide>
+              )
+            })
+          }
+        </Swiper>
+      }
+      <Footer/>
     </Layout>
   )
 }
 
 export const query = graphql`
-    {
-      allFile(filter: { sourceInstanceName: { eq: "images" }}, sort:{fields: name,order: ASC}) {
-        edges {
-          node {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+  {
+    allFile(filter: { sourceInstanceName: { eq: "images" }}, sort:{fields: name,order: ASC}) {
+      edges {
+        node {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp
               }
-          }
+            }
         }
       }
     }
+    allProjectsJson{
+      edges{
+        node{
+          name
+          website
+          image
+          techs
+        }
+      }
+    }
+    allArticlesJson{
+      edges{
+        node{
+          id
+          name
+          description
+          link
+          image
+        }
+      }
+    }
+  }
 `
 
 export default Index

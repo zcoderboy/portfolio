@@ -1,0 +1,20 @@
+[
+  {
+    "name" : "Why soft skills matter for a developer ?",
+    "description": "As developers we often find ourselves focused on how to learn that new programming language...",
+    "link": "https://medium.com/@juniornjay/why-soft-skills-matter-for-a-developer-1fdd0fd88470",
+    "image": "7"
+  },
+  {
+    "name" : "How Innovation House can transform Senegalese tech ecosystem ?",
+    "description": "Innovation House created by Moussa Traoré is located in Dakar and aims to boost the tech...",
+    "link": "https://medium.com/@juniornjay/how-innovation-house-can-transform-senegalese-tech-ecosystem-78cc04b47c0e",
+    "image": "8"
+  },
+  {
+    "name" : "Understanding Flutter widgets",
+    "description": "Flutter is the new Google toolkit for building apps with a single code base. It’s new, fun, have a lot of advantages and uses...",
+    "link": "https://medium.com/@juniornjay/understanding-flutter-widgets-f47e2c6391d1",
+    "image": "9"
+  }
+]

@@ -24,6 +24,43 @@ const Layout = ({ children }) => {
           html,body{
             overflow-x: hidden;
           }
+          .animated-button::hover{
+            color: #fff;
+          }
+          .animated-button:hover{
+            ::before{
+              transform: scaleX(1);
+            }
+            color: #fff;
+          }
+          .animated-button{
+            position: relative;
+          }
+          .animated-button::before{
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #E8505B;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            transition-property: transform;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+          }
+          @media screen and (max-width:630px){
+            .swiper-slide{
+              width: 80%;
+              height: auto;
+            }
+            .swiper-container{
+              padding-left: 5vw;
+              margin-top: 30px;
+            }
+          }
         `}
       />
       <Helmet>
