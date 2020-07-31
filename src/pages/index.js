@@ -9,7 +9,6 @@ import Project from '../components/Project'
 import Article from '../components/Article'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Footer from '../components/Footer'
-import 'swiper/swiper-bundle.min.css';
 
 const Index = ({data}) => {
   const [isSmall,setSmall] = useState(undefined)

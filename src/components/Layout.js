@@ -5,12 +5,7 @@ import { Global,css } from '@emotion/core'
 
 const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
-  // if(typeof document !== "undefined"){
-  //   const link = document.createElement('link')
-  //   link.rel = "stylesheet"
-  //   link.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css"
-  //   document.head.appendChild(link)
-  // }
+  
   return (
     <div>
       <Global
@@ -68,6 +63,7 @@ const Layout = ({ children }) => {
         <title>{title}</title>
         <link rel="icon" type="image/png" href={`favicon.ico`} sizes="16x16" />
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" as="font" crossOrigin></link>
+        <link rel="stylesheet" href="../styles/swiper-bundle.min.css"></link>
         <meta name="description" content={description} />
         <script async src="https://use.fontawesome.com/8f41b465ce.js"></script>
       </Helmet>
