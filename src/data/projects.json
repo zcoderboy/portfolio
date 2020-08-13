@@ -1,25 +1,47 @@
 [
   {
     "name" : "Comic book library",
-    "techs" : "React, HTML, CSS, Marvel API",
+    "techs" : [
+      "react-logo.png",
+      "html-logo-1.png",
+      "css-logo.png"
+    ],
     "website" : "https://react-marvel.netlify.app/",
+    "description" : "Lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing ",
     "image": "1"
   },
   {
     "name" : "Movie library",
-    "techs" : "Angular, HTML, CSS, iMDB API",
+    "techs" : [
+      "angular-logo.png",
+      "/html-logo-1.png",
+      "/css-logo.png",
+      "firebase-logo.png"
+    ],
     "website" : "https://my-movie-app.netlify.app/",
+    "description": "Lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing ",
     "image": "2"
   },
   {
     "name" : "E-commerce store",
-    "techs" : "React, Gatsby, HTML, CSS, Node.js",
+    "techs" : [
+      "/gatsby-logo.png",
+      "/html-logo-1.png",
+      "/css-logo.png",
+      "node-logo.png"
+    ],
+    "description": "Lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing ", 
     "website" : "https://www.lyna-boutique.com",
     "image": "0"
   },
   {
     "name" : "Portal website",
-    "techs" : "Drupal 8, JS, HTML, CSS",
+    "techs" : [
+      "/react-logo.png",
+      "/html-logo-1.png",
+      "/css-logo.png"
+    ],
+    "description": "Lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing ",
     "website" : "https://www.orange.sn",
     "image": "3"
   }
