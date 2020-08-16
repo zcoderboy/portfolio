@@ -25,6 +25,7 @@ const Index = ({data}) => {
           display: flex;
           flex-direction: column;
           align-items: center;
+          position: relative;
           margin-top: 50px;
           height: 100vh;
           @media screen and (max-width:630px){
@@ -59,6 +60,9 @@ const Index = ({data}) => {
             width: 50%;
             > * + *{
               margin-top: 30px;
+            }
+            @media screen and (max-width:630px){
+              width: 100%;
             }
           `}>
             <p css={css`
@@ -111,6 +115,28 @@ const Index = ({data}) => {
                 <a href="https://github.com/zcoderboy/" target="blank"><i className="fa fa-github"></i></a>
               </div>
           </div>
+          <a href="mailto:juniornjay@gmail.com" css={css`
+            background-color: #E8505B;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: absolute;
+            left: 15px;
+            bottom: 20vh;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+            cursor: pointer;
+            @media screen and (max-width:630px){
+                right: 0px;
+                bottom: 30vh;
+                left: auto;
+            }
+          `}>
+            <i className="fa fa-envelope"></i>
+          </a>
           </div>
         {/* <div css={css`
           margin-top: 30px;

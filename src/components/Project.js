@@ -3,7 +3,6 @@ import { css } from '@emotion/core'
 import Img from 'gatsby-image'
 
 const Project = ({name,image,website,techs,description,align}) => {
-  console.log(align)
   return(
     <div css={css`
       max-width: 100%;
@@ -36,7 +35,9 @@ const Project = ({name,image,website,techs,description,align}) => {
       @media screen and (max-width:630px){
         max-width: 100%;
         flex-basis: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
+        padding: 0 10px;
+        flex-direction: column;
         align-items:center;
         > *:not(:first-child){
           margin-left: 0px;
@@ -44,6 +45,9 @@ const Project = ({name,image,website,techs,description,align}) => {
       }
       > *:not(:first-child){
         margin-left: 13px;
+        @media screen and (max-width:630px){
+          margin-left: 0px;
+        }
       }
       > * + *{
         margin-top: 8px;
@@ -65,6 +69,10 @@ const Project = ({name,image,website,techs,description,align}) => {
         fluid={image.childImageSharp.fluid}
         css={css`
           width:40%;
+          @media screen and (max-width:630px){
+            width: 100%;
+            order: 0;
+          }
           order: ${align == 'right' ? '0' : '2'}
         `}
         className="project-img"
@@ -85,6 +93,23 @@ const Project = ({name,image,website,techs,description,align}) => {
         }
         img{
           object-fit: cover;
+        }
+        @media screen and (max-width:630px){
+          padding: 0;
+          p{
+            width: 100%;
+            text-align: justify;
+          }
+          .title{
+            font-size: 24px;
+            text-align: center;
+            margin-top: 10px;
+          }
+          img{
+            object-fit: contain;
+            width: 28px;
+            height: 28px;
+          }
         }
       `}>
         <span className="title">{name}</span>
