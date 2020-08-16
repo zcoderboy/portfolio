@@ -31,6 +31,8 @@ const Index = ({data}) => {
           @media screen and (max-width:630px){
             flex-direction: column;
             align-items: center;
+            height: 100%;
+            margin-bottom: 40px;
           }
         `}>
         <div>
@@ -131,7 +133,7 @@ const Index = ({data}) => {
             cursor: pointer;
             @media screen and (max-width:630px){
                 right: 0px;
-                bottom: 30vh;
+                bottom: 10%;
                 left: auto;
             }
           `}>
@@ -249,9 +251,9 @@ const Index = ({data}) => {
           `}>
             {
               data.allProjectsJson.edges.map((project,index)=>{
-                const {name,website,techs,id,image,description} = {...project.node}
+                const {name,website,techs,id,image,description,github} = {...project.node}
                 return (
-                  <Project key={id} name={name} align={index % 2 == 0 ? 'right' : 'left' } website={website} techs={techs} description={description} image={images[image].node}/>
+                  <Project key={id} name={name} github={github} align={index % 2 == 0 ? 'right' : 'left' } website={website} techs={techs} description={description} image={images[image].node}/>
                 )
               })
             }
@@ -344,6 +346,7 @@ export const query = graphql`
           description
           image
           techs
+          github
         }
       }
     }

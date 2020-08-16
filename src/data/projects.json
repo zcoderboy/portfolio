@@ -7,8 +7,9 @@
       "css-logo.png"
     ],
     "website" : "https://react-marvel.netlify.app/",
-    "description" : "Lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing ",
-    "image": "1"
+    "description" : "Being a huge fan of the Marvel universe, I made this app to view and search Marvel comics and characters. It’s made with React and is using Marvel’s API to pull data.",
+    "image": "1",
+    "github": "https://github.com/zcoderboy/react-marvel-api"
   },
   {
     "name" : "Movie library",
@@ -19,8 +20,9 @@
       "firebase-logo.png"
     ],
     "website" : "https://my-movie-app.netlify.app/",
-    "description": "Lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing ",
-    "image": "2"
+    "description": "This app was made for an Angular presentation, it covers many Angular notions like routes, auth and form validation. It uses IMDb API to get the information about movies and a Firebase database.",
+    "image": "2",
+    "github": "https://github.com/zcoderboy/ngMovies"
   },
   {
     "name" : "E-commerce store",
@@ -30,19 +32,21 @@
       "/css-logo.png",
       "node-logo.png"
     ],
-    "description": "Lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing ", 
+    "description": "I made this website from design to implementation for a local child clothing line. It helps view products and order directly from it. It uses Gatsby for the frontend and Node.js for the backend.", 
     "website" : "https://www.lyna-boutique.com",
-    "image": "0"
+    "image": "0",
+    "github": "false"
   },
   {
     "name" : "Portal website",
     "techs" : [
-      "/react-logo.png",
+      "/drupal-logo.png",
       "/html-logo-1.png",
       "/css-logo.png"
     ],
-    "description": "Lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing lorem ipsum dolor sit amet consectur adepiscing ",
+    "description": "I worked on this website as a consultant for a multinational company. The website presents the company's services and products. It uses Drupal as a content management system.",
     "website" : "https://www.orange.sn",
-    "image": "3"
+    "image": "3",
+    "github": "false"
   }
 ]
