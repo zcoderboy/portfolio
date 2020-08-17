@@ -80,7 +80,7 @@ const Header = () => {
             <li><a href="#" onClick={(event)=>{toggleActive(event)}}>testimonies</a></li>
             <li><a href="#">resume</a></li>
           </ul>
-          <div id="nav-icon1" role="button" tabIndex="0" onClick={ (event)=> {
+          <div id="nav-icon1" onClick={ (event)=> {
             if(event.target.tagName === "DIV"){
               event.target.classList.toggle('open')
             }else{
