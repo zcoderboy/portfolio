@@ -89,7 +89,7 @@ const Index = ({data}) => {
                   background-color: #E8505B;
                   border-radius: 1000px;
                   display: block;
-                  width: 18%;
+                  width: 20%;
                 }
               `}>Samba Ndiaye</span>I am a web developer based in Dakar, Senegal
               focused on creating beautiful and user-friendly websites
@@ -109,6 +109,9 @@ const Index = ({data}) => {
                 }
                 > * + *{
                   margin-left: 20px;
+                }
+                @media only screen and (max-width:630px){
+                  display: none;
                 }
               `}>
                 <a href="https://www.linkedin.com/in/ndiaye-samba/" target="blank"><i className="fa fa-linkedin-square"></i></a>
@@ -133,86 +136,13 @@ const Index = ({data}) => {
             cursor: pointer;
             @media screen and (max-width:630px){
                 right: 0px;
-                bottom: 10%;
+                bottom: 5%;
                 left: auto;
             }
           `}>
             <i className="fa fa-envelope"></i>
           </a>
           </div>
-        {/* <div css={css`
-          margin-top: 30px;
-          width: 75%;
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 80px;
-          @media screen and (max-width:630px){
-            margin-bottom: 50px;
-            flex-direction: column;
-            width: 100%;
-            br{
-              display: none;
-            }
-            > * + *{
-              margin-top: 30px;
-            }
-          }
-          > div{
-            display: flex;
-            flex-direction: column;
-            img{
-              width: 50px;
-            }
-            p{
-              line-height: 1.4;
-              font-size: 15px;
-              margin: 0;
-            }
-            > * + *{
-              margin-top: 15px;
-            }
-            h4{
-              position: relative;
-              font-weight: bold;
-            }
-            h4::before{
-              content : "";
-              position: absolute;
-              left    : 0;
-              bottom  : 0;
-              height  : 1px;
-              width   : 20%;
-              border-bottom:2px solid #E8505B;
-              border-radius: 2px;
-              top: 25px;
-            }
-          }
-        `}>
-            <div>
-              <Img
-                fluid={images[6].node.childImageSharp.fluid}
-                css={css`
-                  width:50px;
-                `}
-              />
-              <h4>Frontend development</h4>
-              <p>I am super familiar with. frontend technologies <br/> 
-                and crafting nice looking stuffs using <br/> 
-                <b>HTML</b>, <b>CSS</b> and of course <b>JavaScript</b></p>
-            </div>
-            <div>
-              <Img
-                fluid={images[4].node.childImageSharp.fluid}
-                css={css`
-                  width:50px;
-                `}
-              />
-              <h4>Backend development</h4>
-              <p>I also have work experience on the back end <br/> 
-                using <b>PHP</b> (Drupal) plus I am a huge fan of <br/>
-                the <b>Node.js</b> ecosystem</p>
-            </div>
-        </div> */}
         <div>
           <span css={css`
             font-size: 25px;
