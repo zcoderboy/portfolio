@@ -12,7 +12,6 @@ const Header = () => {
       }
     })
   }
-
   return(
     <header css={css`
       background-color: #100E08;

@@ -7,6 +7,14 @@ const useSiteMetadata = () => {
         siteMetadata {
           title
           description
+          siteUrl
+          image
+          organization {
+            logo
+          }
+          social {
+            twitter
+          }
         }
       }
     }

@@ -1,7 +1,15 @@
 module.exports = {
   siteMetadata: {
     title: `Samba Ndiaye - Web developer`,
-    description: `Samba Ndiaye's personal website`,
+    description: `I am passionate web developer looking to embellish the Web.`,
+    siteUrl: 'https://www.samba-ndiaye.com',
+    image: 'https://samba-ndiaye.com/me.jpg',
+    organization: {
+      logo: 'https://samba-ndiaye.com/favicon.ico',
+    },
+    social: {
+      twitter: '@zcoderboy'
+    },
   },
   plugins: [
     `gatsby-plugin-emotion`,
