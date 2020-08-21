@@ -4,14 +4,10 @@ import Container from './Container'
 
 
 const Header = () => {
-  const toggleActive = (e) => {
-    e.target.classList.add('active')
-    e.target.parentNode.parentNode.childNodes.forEach((node)=>{
-      if(node.firstChild.classList.contains('active') && node.firstChild !== e.target){
-        node.firstChild.classList.remove('active')
-      }
-    })
+  const closeHamburger = () => {
+    document.getElementById('hamburger').click()
   }
+
   return(
     <header css={css`
       background-color: #100E08;
@@ -73,13 +69,13 @@ const Header = () => {
               }
             }
           `}>
-            <li><a href="#" onClick={(event)=>{toggleActive(event)}}>work</a></li>
-            <li><a href="#" onClick={(event)=>{toggleActive(event)}}>portfolio</a></li>
-            <li><a href="#" onClick={(event)=>{toggleActive(event)}}>articles</a></li>
-            <li><a href="#" onClick={(event)=>{toggleActive(event)}}>testimonies</a></li>
-            <li><a href="#">resume</a></li>
+            <li><a href="#about" onClick={closeHamburger}>about</a></li>
+            <li><a href="#portfolio" onClick={closeHamburger}>portfolio</a></li>
+            <li><a href="#articles" onClick={closeHamburger}>articles</a></li>
+            {/* <li><a href="#" onClick={(event)=>{toggleActive(event)}}>testimonies</a></li> */}
+            <li><a href="/resume.pdf" onClick={closeHamburger} className="resume-link" target="blank">resume</a></li>
           </ul>
-          <div id="nav-icon1" onClick={ (event)=> {
+          <div id="hamburger" onClick={ (event)=> {
             if(event.target.tagName === "DIV"){
               event.target.classList.toggle('open')
             }else{
@@ -87,6 +83,9 @@ const Header = () => {
             }
             document.getElementById('menu').classList.toggle('open')
           }} css={css`
+              @media only screen and (min-width:630px){
+                display: none;
+              }
               width: 26px;
               height: 22px;
               position: relative;

@@ -9,12 +9,23 @@ import Project from '../components/Project'
 import Article from '../components/Article'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Footer from '../components/Footer'
+import $ from 'jquery'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Index = ({data}) => {
   const [isSmall,setSmall] = useState(undefined)
   useEffect(() => {
     setSmall(window.innerWidth <= 630)
-    console.log('effect')
+    $('#menu a').not('.resume-link').on('click',function(){
+      $('html, body').animate({
+        scrollTop: $($(this).attr('href')).offset().top - 100
+      },700)
+    })
+    AOS.init({
+      offset: 350,
+      duration: 1000
+    })
   }, [])
   const images  = data.allFile.edges
   return (
@@ -30,28 +41,29 @@ const Index = ({data}) => {
           height: 100vh;
           @media screen and (max-width:630px){
             flex-direction: column;
-            align-items: center;
             height: 100%;
+            align-items: center;
             margin-bottom: 40px;
+            margin-top: 30px;
           }
-        `}>
+        `} id="about">
         <div>
-        {/* <img src={'gee_me.png'} width="150px"/> */}
         <Img
           fluid={images[5].node.childImageSharp.fluid}
           css={css`
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
             object-position: center center;
             border: 1px solid #eee;
             border-radius: 50%;
-            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
             margin-bottom: 30px;
             @media screen and (max-width:630px){
               align-self: center;
               margin-bottom: 30px;
               align-self: flex-start;
+              width: 150px;
+              height: 150px;
             }
           `}
         />
@@ -68,14 +80,13 @@ const Index = ({data}) => {
             }
           `}>
             <p css={css`
-              font-size: 22px;
               line-height: 1.4;
-              margin:0;
+              font-size: 22px;
               @media screen and (max-width:630px){
-                font-size: 18px;
+                font-size: 16px;
               }
             `}>
-              <span>Hello my name is,</span><br/>
+              Hello my name is,<br/>
               <span css={css`
                 font-size: 50px;
                 font-weight: bolder;
@@ -91,10 +102,20 @@ const Index = ({data}) => {
                   display: block;
                   width: 20%;
                 }
-              `}>Samba Ndiaye</span>I am a web developer based in Dakar, Senegal
+              `}>Samba Ndiaye</span>
+            </p>
+            <p css={css`
+              font-size: 22px;
+              line-height: 1.5;
+              margin:0;
+              @media screen and (max-width:630px){
+                font-size: 16px;
+              }
+            `}>
+              I am a web developer based in Dakar, Senegal
               focused on creating beautiful and user-friendly websites
             </p>
-            <a href="#work" className="animated-button" css={css`
+            <a href="#portfolio" className="animated-button" css={css`
               padding: 1rem;
               border: 1px solid #100E08;
               color: #100E08;
@@ -116,7 +137,6 @@ const Index = ({data}) => {
               `}>
                 <a href="https://www.linkedin.com/in/ndiaye-samba/" target="blank"><i className="fa fa-linkedin-square"></i></a>
                 <a href="https://twitter.com/zcoderboy" target="blank"><i className="fa fa-twitter"></i></a>
-                <a href="https://medium.com/@juniornjay" target="blank"><i className="fa fa-medium"></i></a>
                 <a href="https://github.com/zcoderboy/" target="blank"><i className="fa fa-github"></i></a>
               </div>
           </div>
@@ -143,7 +163,7 @@ const Index = ({data}) => {
             <i className="fa fa-envelope"></i>
           </a>
           </div>
-        <div>
+        <div id="portfolio">
           <span css={css`
             font-size: 25px;
             font-weight: bolder;
@@ -172,7 +192,7 @@ const Index = ({data}) => {
             display: flex;
             flex-direction: column;
             margin-top: 30px;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
             @media screen and (max-width:630px){
               margin-bottom: 50px;
               flex-direction: column;
@@ -189,7 +209,7 @@ const Index = ({data}) => {
             }
           </div>
         </div>
-        <div>
+        <div id="articles">
           <span css={css`
             font-size: 25px;
             font-weight: bolder;

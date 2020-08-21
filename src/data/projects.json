@@ -32,7 +32,7 @@
       "/css-logo.png",
       "node-logo.png"
     ],
-    "description": "I made this website from design to implementation for a local child clothing line. It helps view products and order directly from it. It uses Gatsby for the frontend and Node.js for the backend.", 
+    "description": "I made this website from design to implementation for a local child clothing line. It helps customers view products and place their orders. It uses Gatsby for the frontend and Node.js for the backend.", 
     "website" : "https://www.lyna-boutique.com",
     "image": "0",
     "github": "false"

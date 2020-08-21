@@ -59,7 +59,7 @@ const Footer = () => (
         }
       }
     `}>Shoot me an email if you want to build something with me</span>
-    <a href="#" css={css`
+    <a href="mailto:juniornjay@gmail.com" css={css`
       text-decoration: none;
       color: #fff;
       padding: .5rem 1rem;

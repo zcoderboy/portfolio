@@ -52,11 +52,11 @@ const Project = ({name,github,image,website,techs,description,align}) => {
         width: 35%;
         text-align: center;
       }
-    `}>
+    `} data-aos={align === "left" ? 'fade-left' : 'fade-right'}>
       <Img
         fluid={image.childImageSharp.fluid}
         css={css`
-          width:40%;
+          width:60%;
           @media screen and (max-width:630px){
             width: 100%;
             order: 0;
@@ -112,7 +112,7 @@ const Project = ({name,github,image,website,techs,description,align}) => {
           { 
             techs.map(tech => {
               return (
-                <img src={tech} alt="Logo" width="35px" height="35px"/>
+                <img src={tech} alt="Logo" width="30px" height="30px"/>
               )
             })
           }          
@@ -132,8 +132,8 @@ const Project = ({name,github,image,website,techs,description,align}) => {
             border: none;
           }
         `}>
-          {github && github !== "false" && <a href={github}><i className="fa fa-github"></i></a>}
-          <a href={website}><i className="fa fa-external-link"></i></a>
+          {github && github !== "false" && <a href={github} target="blank"><i className="fa fa-github"></i></a>}
+          <a href={website} target="blank"><i className="fa fa-external-link"></i></a>
         </div>
         {/* <a href={website} target="blank" className="animated-button">Website</a> */}
       </div>
