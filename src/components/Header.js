@@ -88,6 +88,10 @@ const Header = () => {
               @media only screen and (min-width:630px){
                 display: none;
               }
+              :focus{
+                outline: none !important;
+              }
+              outline: none !important;
               width: 26px;
               height: 22px;
               position: relative;
