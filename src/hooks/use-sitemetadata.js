@@ -9,6 +9,7 @@ const useSiteMetadata = () => {
           description
           siteUrl
           image
+          author
           organization {
             logo
           }

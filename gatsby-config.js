@@ -4,6 +4,7 @@ module.exports = {
     description: `I am passionate web developer looking to embellish the Web.`,
     siteUrl: 'https://www.samba-ndiaye.com',
     image: 'https://samba-ndiaye.com/website.png',
+    author: 'Samba Ndiaye',
     organization: {
       logo: 'https://samba-ndiaye.com/favicon.ico',
     },

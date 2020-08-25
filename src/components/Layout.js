@@ -4,7 +4,7 @@ import useSiteMetadata from '../hooks/use-sitemetadata';
 import { Global,css } from '@emotion/core'
 
 const Layout = ({ children }) => {
-  const { title, description, image, siteUrl, social} = useSiteMetadata();
+  const { title, description, image, siteUrl, social, author} = useSiteMetadata();
   return (
     <div>
       <Global
@@ -65,6 +65,7 @@ const Layout = ({ children }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="image" content={image} />
+        <meta name="author" content={author} />
         <link rel="canonical" href={siteUrl} />
 
         {/* OpenGraph tags */}

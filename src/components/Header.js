@@ -8,6 +8,15 @@ const Header = () => {
     document.getElementById('hamburger').click()
   }
 
+  const openHamburger = (event) => {
+    if(event.target.tagName === "DIV"){
+      event.target.classList.toggle('open')
+    }else{
+      event.target.parentNode.classList.toggle('open')
+    }
+    document.getElementById('menu').classList.toggle('open')
+  }
+
   return(
     <header css={css`
       background-color: #100E08;
@@ -75,14 +84,7 @@ const Header = () => {
             {/* <li><a href="#" onClick={(event)=>{toggleActive(event)}}>testimonies</a></li> */}
             <li><a href="/resume.pdf" onClick={closeHamburger} className="resume-link" target="blank">resume</a></li>
           </ul>
-          <div id="hamburger" onClick={ (event)=> {
-            if(event.target.tagName === "DIV"){
-              event.target.classList.toggle('open')
-            }else{
-              event.target.parentNode.classList.toggle('open')
-            }
-            document.getElementById('menu').classList.toggle('open')
-          }} css={css`
+          <div id="hamburger" role="button" tabIndex="0" onKeyPress={ (event) => openHamburger(event) } onClick={ (event) => openHamburger(event) } css={css`
               @media only screen and (min-width:630px){
                 display: none;
               }
