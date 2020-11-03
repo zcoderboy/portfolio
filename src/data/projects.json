@@ -2,9 +2,21 @@
   {
     "name" : "Comic book library",
     "techs" : [
-      "react-logo.png",
-      "html-logo-1.png",
-      "css-logo.png"
+      {
+        "image" : {
+          "src": "../../static/react-logo.png" 
+        }
+      },
+      {
+        "image" : {
+          "src": "../../static/html-logo-1.png" 
+        }
+      },
+      {
+        "image" : {
+          "src": "../../static/css-logo.png" 
+        }
+      }
     ],
     "website" : "https://react-marvel.netlify.app/",
     "description" : "Being a huge fan of the Marvel universe, I made this app to view and search Marvel comics and characters. It’s made with React and is using Marvel’s API to pull data.",
@@ -14,10 +26,26 @@
   {
     "name" : "Movie library",
     "techs" : [
-      "angular-logo.png",
-      "/html-logo-1.png",
-      "/css-logo.png",
-      "firebase-logo.png"
+      {
+        "image" : {
+          "src": "../../static/angular-logo.png" 
+        }
+      },
+      {
+        "image" : {
+          "src": "../../static/html-logo-1.png" 
+        }
+      },
+      {
+        "image" : {
+          "src": "../../static/css-logo.png" 
+        }
+      },
+      {
+        "image" : {
+          "src": "../../static/firebase-logo.png" 
+        }
+      }
     ],
     "website" : "https://my-movie-app.netlify.app/",
     "description": "This app was made for an Angular presentation, it covers many Angular notions like routes, auth and form validation. It uses IMDb API to get the information about movies and a Firebase database.",
@@ -27,10 +55,26 @@
   {
     "name" : "E-commerce store",
     "techs" : [
-      "/gatsby-logo.png",
-      "/html-logo-1.png",
-      "/css-logo.png",
-      "node-logo.png"
+      {
+        "image" : {
+          "src": "../../static/gatsby-logo.png" 
+        }
+      },
+      {
+        "image" : {
+          "src": "../../static/html-logo-1.png"
+        }
+      },
+      {
+        "image" : {
+          "src": "../../static/css-logo.png"
+        }
+      },
+      {
+        "image" : {
+          "src": "../../static/node-logo.png" 
+        }
+      }
     ],
     "description": "I made this website from design to implementation for a local child clothing line. It helps customers view products and place their orders. It uses Gatsby for the frontend and Node.js for the backend.", 
     "website" : "https://www.lyna-boutique.com",
@@ -40,9 +84,21 @@
   {
     "name" : "Portal website",
     "techs" : [
-      "/drupal-logo.png",
-      "/html-logo-1.png",
-      "/css-logo.png"
+      {
+        "image" : {
+          "src": "../../static/drupal-logo.png"
+        }
+      },
+      {
+        "image" : { 
+          "src": "../../static/html-logo-1.png" 
+        }
+      },
+      {
+        "image" : { 
+          "src": "../../static/css-logo.png" 
+        }
+      }
     ],
     "description": "I worked on this website as a consultant for a multinational company. The website presents the company's services and products. It uses Drupal as a content management system.",
     "website" : "https://www.orange.sn",

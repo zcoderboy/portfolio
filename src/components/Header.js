@@ -81,10 +81,9 @@ const Header = () => {
             <li><a href="#about" onClick={closeHamburger}>about</a></li>
             <li><a href="#portfolio" onClick={closeHamburger}>portfolio</a></li>
             <li><a href="#articles" onClick={closeHamburger}>articles</a></li>
-            {/* <li><a href="#" onClick={(event)=>{toggleActive(event)}}>testimonies</a></li> */}
             <li><a href="/resume.pdf" onClick={closeHamburger} className="resume-link" target="blank">resume</a></li>
           </ul>
-          <div id="hamburger" role="button" tabIndex="0" onKeyPress={ (event) => openHamburger(event) } onClick={ (event) => openHamburger(event) } css={css`
+          <div id="hamburger" aria-label="hamburger-button" role="button" tabIndex="0" onKeyPress={ (event) => openHamburger(event) } onClick={ (event) => openHamburger(event) } css={css`
               @media only screen and (min-width:630px){
                 display: none;
               }

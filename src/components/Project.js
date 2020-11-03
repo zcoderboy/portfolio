@@ -112,7 +112,10 @@ const Project = ({name,github,image,website,techs,description,align}) => {
           { 
             techs.map(tech => {
               return (
-                <img src={tech} alt="Logo" width="30px" height="30px"/>
+                <Img
+                  fixed={tech.image.src.childImageSharp.fixed}
+                  alt="logo"
+                />
               )
             })
           }          
@@ -132,8 +135,8 @@ const Project = ({name,github,image,website,techs,description,align}) => {
             border: none;
           }
         `}>
-          {github && github !== "false" && <a href={github} target="blank"><i className="fa fa-github"></i></a>}
-          <a href={website} target="blank"><i className="fa fa-external-link"></i></a>
+          {github && github !== "false" && <a href={github} aria-label="github" target="blank"><i className="fa fa-github"></i></a>}
+          <a aria-label="website" href={website} target="blank"><i className="fa fa-external-link"></i></a>
         </div>
         {/* <a href={website} target="blank" className="animated-button">Website</a> */}
       </div>

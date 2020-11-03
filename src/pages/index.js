@@ -202,6 +202,7 @@ const Index = ({data}) => {
             {
               data.allProjectsJson.edges.map((project,index)=>{
                 const {name,website,techs,id,image,description,github} = {...project.node}
+                console.log(techs)
                 return (
                   <Project key={id} name={name} github={github} align={index % 2 == 0 ? 'right' : 'left' } website={website} techs={techs} description={description} image={images[image].node}/>
                 )
@@ -295,7 +296,17 @@ export const query = graphql`
           website
           description
           image
-          techs
+          techs {
+            image{
+              src {
+                childImageSharp {
+                  fixed(width: 30, height: 30) {
+                    ...GatsbyImageSharpFixed_withWebp
+                  }
+                }
+              }
+            }
+          }
           github
         }
       }

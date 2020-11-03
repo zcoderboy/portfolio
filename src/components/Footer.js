@@ -59,7 +59,7 @@ const Footer = () => (
         }
       }
     `}>Shoot me an email if you want to build something with me</span>
-    <a href="mailto:juniornjay@gmail.com" css={css`
+    <a href="mailto:juniornjay@gmail.com" aria-label="mail" css={css`
       text-decoration: none;
       color: #fff;
       padding: .5rem 1rem;
@@ -78,10 +78,10 @@ const Footer = () => (
         margin-left: 20px;
       }
     `}>
-      <a href="https://www.linkedin.com/in/ndiaye-samba/" target="blank"><i className="fa fa-linkedin-square"></i></a>
-      <a href="https://twitter.com/zcoderboy" target="blank"><i className="fa fa-twitter"></i></a>
-      <a href="https://medium.com/@juniornjay" target="blank"><i className="fa fa-medium"></i></a>
-      <a href="https://github.com/zcoderboy/" target="blank"><i className="fa fa-github"></i></a>
+      <a aria-label="linkedin" href="https://www.linkedin.com/in/ndiaye-samba/" target="blank"><i className="fa fa-linkedin-square"></i></a>
+      <a aria-label="twitter" href="https://twitter.com/zcoderboy" target="blank"><i className="fa fa-twitter"></i></a>
+      <a aria-label="medium" href="https://medium.com/@juniornjay" target="blank"><i className="fa fa-medium"></i></a>
+      <a aria-label="github" href="https://github.com/zcoderboy/" target="blank"><i className="fa fa-github"></i></a>
     </div>
   </footer>
 )
