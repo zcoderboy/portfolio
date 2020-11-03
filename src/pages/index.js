@@ -140,7 +140,7 @@ const Index = ({data}) => {
                 <a href="https://github.com/zcoderboy/" target="blank"><i className="fa fa-github"></i></a>
               </div>
           </div>
-          <a href="mailto:juniornjay@gmail.com" css={css`
+          <a href="mailto:juniornjay@gmail.com" aria-label="mail" css={css`
             background-color: #E8505B;
             border-radius: 50%;
             width: 50px;
