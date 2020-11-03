@@ -27,10 +27,6 @@ const Index = ({data}) => {
       offset: 350,
       duration: 1000
     })
-    // Loading fa script
-    var faScript= document.createElement('script');
-    faScript.src = 'https://use.fontawesome.com/8f41b465ce.js';
-    document.body.appendChild(faScript);
   }, [])
   const images  = data.allFile.edges
   return (
