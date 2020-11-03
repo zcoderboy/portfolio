@@ -16,6 +16,7 @@ import 'aos/dist/aos.css';
 const Index = ({data}) => {
   const [isSmall,setSmall] = useState(undefined)
   useEffect(() => {
+    // Getting device with and adding events
     setSmall(window.innerWidth <= 630)
     $('#menu a').not('.resume-link').on('click',function(){
       $('html, body').animate({
@@ -26,6 +27,10 @@ const Index = ({data}) => {
       offset: 350,
       duration: 1000
     })
+    // Loading fa script
+    var faScript= document.createElement('script');
+    faScript.src = 'https://use.fontawesome.com/8f41b465ce.js';
+    document.body.appendChild(faScript);
   }, [])
   const images  = data.allFile.edges
   return (

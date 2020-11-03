@@ -101,11 +101,6 @@ const Layout = ({ children }) => {
         <link rel="icon" type="image/png" href={`favicon.ico`} sizes="16x16" />
         <meta name="description" content={description} />
         <link rel="preload" as="script" href="https://use.fontawesome.com/8f41b465ce.js"/>
-        <script type="text/javascript">{`
-          var faScript= document.createElement('script');
-          faScript.src = 'https://use.fontawesome.com/8f41b465ce.js';
-          document.body.appendChild(faScript);
-        `}</script>
       </Helmet>
       { }
       {children}
