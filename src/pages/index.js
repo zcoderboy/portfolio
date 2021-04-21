@@ -13,9 +13,39 @@ import $ from 'jquery'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+const articlesQuery = `
+{
+  user(username:"juniornjay") {
+    publication {
+      posts {
+        title
+        brief
+        slug
+        cuid
+        coverImage
+        totalReactions
+      }
+    }
+  }
+}`;
+
 const Index = ({data}) => {
   const [isSmall,setSmall] = useState(undefined)
+  const [articles,setArticles] = useState([])
+  const getArticles = async function(){
+    const response = await fetch("https://api.hashnode.com", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ query: articlesQuery })
+    });
+    return response.ok ? await response.json() : []
+  }
   useEffect(() => {
+    getArticles().then(response => {
+      setArticles(response.data.user.publication.posts)
+    })
     // Getting device with and adding events
     setSmall(window.innerWidth <= 630)
     $('#menu a').not('.resume-link').on('click',function(){
@@ -29,6 +59,7 @@ const Index = ({data}) => {
     })
   }, [])
   const images  = data.allFile.edges
+  console.log(images)
   return (
     <Layout>
       <Header/>
@@ -50,7 +81,7 @@ const Index = ({data}) => {
         `} id="about">
         <div>
         <Img
-          fluid={images[5].node.childImageSharp.fluid}
+          fluid={images[4].node.childImageSharp.fluid}
           css={css`
             width: 200px;
             height: 200px;
@@ -87,7 +118,7 @@ const Index = ({data}) => {
                 font-size: 16px;
               }
             `}>
-              Hello my name is,<br/>
+              👋 Hello my name is,<br/>
               <span css={css`
                 font-size: 50px;
                 font-weight: bolder;
@@ -113,8 +144,8 @@ const Index = ({data}) => {
                 font-size: 16px;
               }
             `}>
-              I am a web developer based in Dakar, Senegal
-              focused on creating beautiful and user-friendly websites
+              I am a web developer based in Dakar, Senegal 🇸🇳.
+              I am focused on creating beautiful and user-friendly websites.
             </p>
             <a href="#portfolio" className="animated-button" css={css`
               padding: 1rem;
@@ -234,42 +265,64 @@ const Index = ({data}) => {
             @media screen and (max-width:630px){
               font-size: 14px;
             }
-          `}>On my free time I also write articles on Medium</span>
+          `}>On my free time I also write on my personal blog</span>
           {
             isSmall != undefined && !isSmall &&
-            <div css={css`
-            display: flex;
-            margin-top: 30px;
-            `}>
-              {
-                data.allArticlesJson.edges.map((article)=>{
-                  const {name,link,image,description,id} = {...article.node}
-                  return(
-                    <Article key={id} name={name} link={link} image={images[image].node} description={description}/>
-                  )
-                })
-              }
+            <>
+              <div css={css`
+              display: flex;
+              margin-top: 30px;
+              `}>
+                {
+                  articles.map((article)=>{
+                    const {title,slug,coverImage,cuid,brief} = {...article}
+                    return(
+                      <Article key={cuid} name={title} link={`https://blog.samba-ndiaye.com/${slug}`} image={coverImage} description={brief}/>
+                    )
+                  })
+                }
+              </div>
+              <div css={css`
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 1rem;
+                font-size: 22px;
+                text-decoration: none;
+              `}>
+              <a href="https://blog.samba-ndiaye.com" target="blank">Discover all articles →</a>
             </div>
+          </>
           }
         </div>
       </Container>
       {
         isSmall != undefined && isSmall &&
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={'auto'}
-        >
-          {
-            data.allArticlesJson.edges.map((article)=>{
-              const {name,link,image,description,id} = {...article.node}
-              return(
-                <SwiperSlide key={id}>
-                  <Article name={name} link={link} image={images[image].node} description={description}/>
-                </SwiperSlide>
-              )
-            })
-          }
-        </Swiper>
+        <>
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={'auto'}
+          >
+            {
+              articles.map((article)=>{
+                const {title,slug,coverImage,cuid,brief} = {...article}
+                return(
+                  <SwiperSlide key={cuid}>
+                    <Article name={title} link={`https://blog.samba-ndiaye.com/${slug}`} image={coverImage} description={brief}/>
+                  </SwiperSlide>
+                )
+              })
+            }
+          </Swiper>
+          <div css={css`
+              display: flex;
+              justify-content: end;
+              margin-top: 1rem;
+              font-size: 22px;
+              text-decoration: underline;
+            `}>
+              <a href="https://blog.samba-ndiaye.com" target="blank">Discover all articles →</a>
+            </div>
+        </>
       }
       <Footer/>
     </Layout>
@@ -308,17 +361,6 @@ export const query = graphql`
             }
           }
           github
-        }
-      }
-    }
-    allArticlesJson{
-      edges{
-        node{
-          id
-          name
-          description
-          link
-          image
         }
       }
     }

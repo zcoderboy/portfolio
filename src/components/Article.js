@@ -1,6 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import {css} from "@emotion/core"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Article = ({name,link,image,description}) => {
   return(
@@ -49,15 +50,20 @@ const Article = ({name,link,image,description}) => {
           }
         }
       `}>
-        <Img
-          fluid={image.childImageSharp.fluid}
-          sizes={{...image.childImageSharp.fluid, aspectRatio: 3/1.5}}
+        <img
+          src={image}
           css={css`
             width: 100%;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             transition: .4s;
+            object-fit: cover;
+            @media screen and (max-width:630px){
+              height: 150px;
+            }
           `}
+          height="250px"
+          alt="article-img"
           className="article-img"
         />
         <div css={css`
@@ -65,6 +71,12 @@ const Article = ({name,link,image,description}) => {
           display: flex;
           flex-direction: column;
           flex: 1;
+          h3{
+            margin: 0;
+            @media screen and (max-width:630px){
+              font-size: 16px;
+            }
+          }
           a{
             margin-top: auto;
           }
@@ -74,11 +86,11 @@ const Article = ({name,link,image,description}) => {
             }
           }
         `}>
-          <span>{name}</span>
+          <h3>{name}</h3>
           <p>
-            {description}
+            {description.slice(0,100).concat('...')}
           </p>
-          <a href={link} alt="Read more" className="animated-button">Read</a>
+          <a href={link} alt="Read more" className="animated-button" target="blank">Read</a>
         </div>
       </div>
     </div>

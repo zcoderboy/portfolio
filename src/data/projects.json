@@ -1,5 +1,24 @@
 [
   {
+    "name" : "Streaming guide app",
+    "techs" : [
+      {
+        "image" : {
+          "src": "../../static/next-logo.png" 
+        }
+      },
+      {
+        "image" : {
+          "src": "../../static/supabase-logo.png" 
+        }
+      }
+    ],
+    "website" : "https://movie-hunt.vercel.app/",
+    "description" : "I usually spend hours on Netflix browsing through the endless list of movies. This app can quickly help you find a movie to watch on your favorite streaming service.",
+    "image": "5",
+    "github": "https://github.com/zcoderboy/movie-hunt"
+  },
+  {
     "name" : "Comic book library",
     "techs" : [
       {
@@ -76,7 +95,7 @@
         }
       }
     ],
-    "description": "I made this website from design to implementation for a local child clothing line. It helps customers view products and place their orders. It uses Gatsby for the frontend and Node.js for the backend.", 
+    "description": "I made this website from design to code for a local child clothing line. It helps customers view products and place their orders. It uses Gatsby for the frontend and Node.js for the backend.", 
     "website" : "https://www.lyna-boutique.com",
     "image": "0",
     "github": "false"
@@ -101,7 +120,7 @@
       }
     ],
     "description": "I worked on this website as a consultant for a multinational company. The website presents the company's services and products. It uses Drupal as a content management system.",
-    "website" : "https://www.orange.sn",
+    "website" : "https://www.orangebusiness.sn",
     "image": "3",
     "github": "false"
   }
