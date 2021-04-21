@@ -144,7 +144,7 @@ const Index = ({data}) => {
                 font-size: 16px;
               }
             `}>
-              I am a web developer based in Dakar, Senegal 🇸🇳.
+              I am a web developer based in Senegal 🇸🇳.
               I am focused on creating beautiful and user-friendly websites.
             </p>
             <a href="#portfolio" className="animated-button" css={css`
@@ -288,6 +288,7 @@ const Index = ({data}) => {
                 margin-top: 1rem;
                 font-size: 22px;
                 text-decoration: none;
+                color: #000;
               `}>
               <a href="https://blog.samba-ndiaye.com" target="blank">Discover all articles →</a>
             </div>
@@ -315,10 +316,11 @@ const Index = ({data}) => {
           </Swiper>
           <div css={css`
               display: flex;
-              justify-content: end;
+              justify-content: flex-end;
               margin-top: 1rem;
               font-size: 22px;
               text-decoration: underline;
+              color: #000;
             `}>
               <a href="https://blog.samba-ndiaye.com" target="blank">Discover all articles →</a>
             </div>
