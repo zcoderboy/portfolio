@@ -59,7 +59,6 @@ const Index = ({data}) => {
     })
   }, [])
   const images  = data.allFile.edges
-  console.log(images)
   return (
     <Layout>
       <Header/>
@@ -285,10 +284,16 @@ const Index = ({data}) => {
               <div css={css`
                 display: flex;
                 justify-content: flex-end;
-                margin-top: 1rem;
-                font-size: 22px;
+                margin-top: 1.5rem;
+                font-size: 18px;
                 text-decoration: none;
                 color: #000;
+                > a {
+                  border: 1px solid #E8505B;
+                  padding: .5rem;
+                  color: #E8505B;
+                  text-decoration: none;
+                }
               `}>
               <a href="https://blog.samba-ndiaye.com" target="blank">Discover all articles →</a>
             </div>
@@ -314,16 +319,24 @@ const Index = ({data}) => {
               })
             }
           </Swiper>
-          <div css={css`
+          <Container>
+            <div css={css`
               display: flex;
               justify-content: flex-end;
               margin-top: 1rem;
-              font-size: 22px;
-              text-decoration: underline;
+              font-size: 18px;
+              text-decoration: none;
               color: #000;
+              > a {
+                border: 1px solid #E8505B;
+                padding: .5rem;
+                color: #E8505B;
+                text-decoration: none;
+              }
             `}>
-              <a href="https://blog.samba-ndiaye.com" target="blank">Discover all articles →</a>
-            </div>
+                <a href="https://blog.samba-ndiaye.com" target="blank">Discover all articles →</a>
+              </div>
+          </Container>
         </>
       }
       <Footer/>

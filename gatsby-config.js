@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Samba Ndiaye - Web Developer`,
-    description: `I am passionate web developer looking to embellish the Web.`,
+    description: `I am a web developer based in Senegal 🇸🇳. I am focused on creating beautiful and user-friendly websites.`,
     siteUrl: 'https://www.samba-ndiaye.com',
-    image: 'https://samba-ndiaye.com/website.png',
+    image: 'https://www.samba-ndiaye.com/website.png',
     author: 'Samba Ndiaye',
     organization: {
       logo: 'https://samba-ndiaye.com/favicon.ico',
