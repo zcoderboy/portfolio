@@ -76,7 +76,7 @@ const Layout = ({ children }) => {
         <meta property="og:image" content={image} />
 
         {/* Twitter Card tags */}
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={social.twitter} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
