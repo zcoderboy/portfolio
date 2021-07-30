@@ -276,7 +276,7 @@ const Index = ({data}) => {
                   articles.map((article)=>{
                     const {title,slug,coverImage,cuid,brief} = {...article}
                     return(
-                      <Article key={cuid} name={title} link={`https://blog.samba-ndiaye.com/${slug}`} image={coverImage} description={brief}/>
+                      <Article key={cuid} name={title} link={`https://blog.samba-ndiaye.dev/${slug}`} image={coverImage} description={brief}/>
                     )
                   })
                 }
@@ -295,7 +295,7 @@ const Index = ({data}) => {
                   text-decoration: none;
                 }
               `}>
-              <a href="https://blog.samba-ndiaye.com" target="blank">Discover all articles →</a>
+              <a href="https://blog.samba-ndiaye.dev" target="blank">Discover all articles →</a>
             </div>
           </>
           }
